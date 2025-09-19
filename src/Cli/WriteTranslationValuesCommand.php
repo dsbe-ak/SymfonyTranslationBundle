@@ -49,7 +49,7 @@ final class WriteTranslationValuesCommand extends Command
 
     protected function configure(): void
     {
-        $this->setDescription('Dump all translations into files');
+        $this->setName(self::$defaultName)->setDescription('Dump all translations into files');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int

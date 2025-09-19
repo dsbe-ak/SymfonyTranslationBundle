@@ -41,7 +41,7 @@ final class ExecuteMigrationCommand extends Command
 
     protected function configure(): void
     {
-        $this->setDescription('Execute migration of translations');
+        $this->setName(self::$defaultName)->setDescription('Execute migration of translations');
 
         $this->addOption(
             'resync',
