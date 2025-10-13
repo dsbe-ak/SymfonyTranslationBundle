@@ -36,7 +36,7 @@ final class WriteTranslationValuesCommand extends Command
         TranslationValueSaverInterface $translationValueSaver,
         string $localeCode,
         array $locales,
-        string $name = null
+        ?string $name = null
     ) {
         parent::__construct($name);
 

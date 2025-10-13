@@ -30,7 +30,7 @@ final class ExecuteMigrationCommand extends Command
         GlobFinder $translationFinder,
         string $translationMigrationDirectory,
         ExecutorInterface $migrationExecutor,
-        string $name = null
+        ?string $name = null
     ) {
         parent::__construct($name);
 
