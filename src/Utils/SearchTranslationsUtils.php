@@ -49,11 +49,11 @@ final class SearchTranslationsUtils implements SearchTranslationsUtilsInterface
         $translations = $this->translationTransformer->transformMultiple($translations);
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
             $translations = array_filter($translations, function (TranslationInterface $translation) use ($search): bool {
-                if (false !== mb_strpos($translation->getKey(), $search->getSearch())) {
+                if (false !== mb_strpos($translation->getKey(), (string) $search->getSearch())) {
                     return true;
                 }
                 foreach ($translation->getValues() as $translationValue) {
-                    if (false !== mb_strpos($translationValue->getValue(), $search->getSearch())) {
+                    if (false !== mb_strpos($translationValue->getValue(), (string) $search->getSearch())) {
                         return true;
                     }
                 }
